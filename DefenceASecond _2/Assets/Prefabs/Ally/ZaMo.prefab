@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1474749673
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.5176471, g: 0.99215686, b: 0.34117648, a: 1}
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1474749673
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c56c591cf59114443963b79416c40215, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -260,6 +260,9 @@ MonoBehaviour:
   characterTypeImg: {fileID: -7841852741387230135, guid: 94c44c54c2ff32a43abc30f34b8d4887, type: 3}
   characterBigHead: {fileID: -4440328031533830899, guid: f60bce8bed61a4e40be889c15914989e, type: 3}
   cost: 4
+  moveTarget: []
+  upgradeMaterialsName: []
+  upgradeMaterialsAmount: 
   projectiles: {fileID: 5961621836791946411, guid: 329628ce71c23374aaacff373ff87edf, type: 3}
 --- !u!1 &2621393277054644972
 GameObject:

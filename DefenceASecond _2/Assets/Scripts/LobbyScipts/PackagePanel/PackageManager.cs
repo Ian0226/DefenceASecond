@@ -10,13 +10,20 @@ public class PackageManager : MonoBehaviour
 
     private void OnEnable()
     {
-        
-        for(int i=0;i< AllGameData.getPlayerItems().Count;i++)
+        ClearAllObj();
+        for (int i=0;i< AllGameData.getPlayerItems().Count;i++)
         {
-            Debug.Log(AllGameData.getPlayerItemByIndex(i));
+            //Debug.Log(AllGameData.getPlayerItemByIndex(i));
             GameObject itemObj =  Instantiate(AllGameData.getPlayerItemByIndex(i));
             itemObj.transform.SetParent(itemGroupPanel.transform);
+        }
     }
+    private void ClearAllObj()
+    {
+        for (int i = 0; i < itemGroupPanel.transform.childCount; i++)
+        {
+            Destroy(itemGroupPanel.transform.GetChild(i).gameObject);
+        }
     }
         
     

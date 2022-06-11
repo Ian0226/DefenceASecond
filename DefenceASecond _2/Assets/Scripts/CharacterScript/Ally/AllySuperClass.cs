@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AllySuperClass : CharacterSuperClass
 {
@@ -34,7 +35,22 @@ public class AllySuperClass : CharacterSuperClass
     private GameObject moveTargets;
     protected int i = 0;
 
+    private int chaLevel;
+    public int ChaLevel
+    {
+        get { return chaLevel; }
+        set { chaLevel = value; }
+    }
+    /// <summary>
+    /// 強化需要的素材
+    /// </summary>
+    [Header("強化素材的名稱跟數量")]
+    public string[] upgradeMaterialsName;
+    public int[] upgradeMaterialsAmount;
+    public float[] upgradeValue;
     
+    //public int 
+
     private void Start()
     {
         moveTargets = GameObject.Find("MoveTarget");
@@ -73,5 +89,6 @@ public class AllySuperClass : CharacterSuperClass
         Destroy(this.gameObject);
         
     }
+    
     
 }

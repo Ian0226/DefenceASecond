@@ -93,6 +93,18 @@ public class AllGameData : MonoBehaviour
     {
         return playerItems[i];
     }
+    public static GameObject getPlayerItemByName(string name)
+    {
+        GameObject item = new GameObject();
+        foreach(GameObject obj in playerItems)
+        {
+            if(obj.name == name)
+            {
+                item = obj;
+            }
+        }
+        return item;
+    }
     public void SaveData()//將AllGameData內資料放進PlayerData中，並將PlayerData資料存成Json檔
     {
         ClearData();

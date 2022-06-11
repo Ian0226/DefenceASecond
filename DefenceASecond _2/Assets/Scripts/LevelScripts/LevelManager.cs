@@ -57,6 +57,8 @@ public class LevelManager : MonoBehaviour
     [Header("關卡掉落獎勵")]
     [SerializeField]
     private GameObject[] levelReward;
+    [SerializeField]
+    private int[] levelRewardCount;
 
     public GameObject winGameRewardPanel;
 
@@ -125,7 +127,9 @@ public class LevelManager : MonoBehaviour
             playerLose = false;
             winPanel.SetActive(true);
             DisplayWinGameReward();
-            AllGameData.getPlayerItems().AddRange(levelReward);
+
+            //AddLevelRewardToGameData();
+
             //Debug.Log(AllGameData.getPlayerItemByIndex(0));
             Time.timeScale = 0;
         }
@@ -158,9 +162,44 @@ public class LevelManager : MonoBehaviour
             playerLose = false;
             winPanel.SetActive(true);
             DisplayWinGameReward();
-            AllGameData.getPlayerItems().AddRange(levelReward);
-            Debug.Log(AllGameData.getPlayerItemByIndex(0));
+
+            AddLevelRewardToGameData();
+
+
+            //Debug.Log(AllGameData.getPlayerItemByIndex(0));
             Time.timeScale = 0;
+        }
+        
+    }
+    //把關卡獎勵存入AllGameData
+    private void AddLevelRewardToGameData()
+    {
+        if(AllGameData.getPlayerItems().Count > 0)
+        {
+            for(int i = 0; i < AllGameData.getPlayerItems().Count; i++)
+            {
+                for(int j = 0; j < levelReward.Length;j++)
+                {
+                    if (AllGameData.getPlayerItemByIndex(i).name == levelReward[j].name)
+                    {
+                        AllGameData.getPlayerItemByIndex(i).transform.GetChild(0).GetComponent<ItemClass>().itemAmountValue += levelRewardCount[j];
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                
+            }
+        }
+        else
+        {
+            for(int i=0;i<levelReward.Length;i++)
+            {
+                levelReward[i].transform.GetChild(0).GetComponent<ItemClass>().itemAmountValue += levelRewardCount[i];
+                AllGameData.getPlayerItems().Add(levelReward[i]);
+            }
+            
         }
         
     }
@@ -259,7 +298,15 @@ public class LevelManager : MonoBehaviour
     }
     private void DisplayWinGameReward()
     {
-        foreach (GameObject obj in levelReward)
-            Instantiate(obj).transform.SetParent(winGameRewardPanel.transform);
+        for(int i = 0;i<levelReward.Length;i++)
+        {
+            GameObject gameObj = Instantiate(levelReward[i]);
+            gameObj.transform.SetParent(winGameRewardPanel.transform);
+            gameObj.transform.GetChild(0).GetComponent<ItemClass>().itemAmountValue = levelRewardCount[i];
+
+            //AllGameData.getPlayerItems().Add(gameObj);
+        }
+        
+
     }
 }

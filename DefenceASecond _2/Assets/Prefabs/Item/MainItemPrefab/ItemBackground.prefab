@@ -517,8 +517,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9832b176b356842439eeebbc899ddbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 2767144520379605061}
   itemName: 
   itemDescription: 
   itemInfoPanel: {fileID: 7849890596171137743}
   itemNameText: {fileID: 7849890596870938096}
   itemDescriptionText: {fileID: 7849890596198564395}
+  itemAmountValue: 0
+  itemAmount: {fileID: 3896069003506834421}

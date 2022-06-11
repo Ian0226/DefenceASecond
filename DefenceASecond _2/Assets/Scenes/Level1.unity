@@ -4706,6 +4706,7 @@ MonoBehaviour:
   - {fileID: 8437295937325159650, guid: 5075b4c8f7646704a87c3b44e79a6ef3, type: 3}
   - {fileID: 5765191996062318394, guid: 8f6b3b5590b3df14591e8b0b6beb7546, type: 3}
   - {fileID: 1784980633940734138, guid: 90bf840cda624f144a0b374d0fdb2f1f, type: 3}
+  levelRewardCount: 020000000200000002000000
   winGameRewardPanel: {fileID: 1233572499}
   enemyCount: 0f00000014000000190000001e00000023000000
   prepareStatusText: {fileID: 1814273189}

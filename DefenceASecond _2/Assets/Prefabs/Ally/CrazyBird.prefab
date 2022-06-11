@@ -319,9 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f942b3dbcaabc4abb9bdcb6ed1899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  health: 100
-  moveSpeed: 1.5
+  damage: 25
+  health: 120
+  moveSpeed: 2
   attackSpeed: 3
   deathEffect: {fileID: 5304031106107356129, guid: b5b88306347440c4ca266b78f206108c, type: 3}
   anim: {fileID: 1761749085032974667}
@@ -331,3 +331,13 @@ MonoBehaviour:
   characterTypeImg: {fileID: -7873855309210456077, guid: 94c44c54c2ff32a43abc30f34b8d4887, type: 3}
   characterBigHead: {fileID: 6375404495001891194, guid: f60bce8bed61a4e40be889c15914989e, type: 3}
   cost: 2
+  moveTarget: []
+  upgradeMaterialsName:
+  - BossTeeth
+  - PIAOHANSoul
+  - YuYuMao
+  upgradeMaterialsAmount: 010000000100000001000000
+  upgradeValue:
+  - 3
+  - 5
+  - 0.5

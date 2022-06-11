@@ -443,6 +443,7 @@ MonoBehaviour:
   itemInfoPanel: {fileID: 5932138744863642160}
   itemNameText: {fileID: 5932138745631591695}
   itemDescriptionText: {fileID: 5932138744151823060}
+  itemAmount: {fileID: 626782341053238026}
 --- !u!1 &5932138745631591689
 GameObject:
   m_ObjectHideFlags: 0
