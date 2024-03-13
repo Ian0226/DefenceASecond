@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class BuildBtnController : MonoBehaviour
 {
-    [Header("這東東等丟進去遊戲場景後再放")]
     [SerializeField]
     private BuildManager buildManager;
 
@@ -14,7 +13,6 @@ public class BuildBtnController : MonoBehaviour
 
     private GameObject nowBuild;
 
-    [Header("這個也是")]
     [SerializeField]
     private PlayerHome playerHome;
 

@@ -21,7 +21,7 @@ public class PowerUpPanelManager : MonoBehaviour
     public GameObject materialBlock;
 
     //放遊戲中UI物件的變數
-    [Header("顯示東西的框框")]
+    [Header("Display item")]
     public GameObject characterPanel;
     public GameObject materialsPanel;
     public GameObject chaUpgradeValuePanel;

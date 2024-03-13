@@ -27,9 +27,6 @@ public class FarRangeAlly : AllySuperClass
         projectiles.GetComponent<BigRangeProjectiles>().Damage = damage;
         Instantiate(projectiles, insPos, Quaternion.identity);
     }
-    public override void Attack()
-    {
-        //暫不實作，留給子類
-    }
+    public override void Attack(){}
     
 }

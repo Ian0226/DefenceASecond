@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHome : MonoBehaviour
 {
-    [Header("玩家遊戲內金幣")]
+    [Header("Player money in battle")]
     [SerializeField]private int playerMoney;
     public int PlayerMoney
     {
@@ -32,14 +32,14 @@ public class PlayerHome : MonoBehaviour
     /// </summary>
     private int maxPlayerMoney;
 
-    [Header("玩家主堡血量")]
+    [Header("Player castle hleath")]
     [SerializeField]private int castleHealth;
     public int CastleHealth
     {
         get { return castleHealth; }
     }
 
-    [Header("玩家城堡等級")]
+    [Header("Player castle level")]
     [SerializeField]private int castleLevel;
 
     private int upgradeCastleCost;

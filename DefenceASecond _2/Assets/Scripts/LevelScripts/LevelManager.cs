@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject[] createdEnemy;
 
-    [Header("每一種敵人循環生成時間")]
+    [Header("Enemy instantiate rate")]
     [SerializeField]
     private float[] createEnemyTime;
     [SerializeField]
@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour
     public GameObject winPanel;
     public GameObject losePanel;
 
-    [Header("關卡掉落獎勵")]
+    [Header("Level end reward")]
     [SerializeField]
     private GameObject[] levelReward;
     [SerializeField]

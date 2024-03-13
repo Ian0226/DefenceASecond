@@ -19,8 +19,5 @@ public class FarRangeEnemy : EnemySuperClass
         //之後要做另外兩種投射物
 
     }
-    public override void Attack()
-    {
-        //暫不實作，留給子類
-    }
+    public override void Attack(){}
 }

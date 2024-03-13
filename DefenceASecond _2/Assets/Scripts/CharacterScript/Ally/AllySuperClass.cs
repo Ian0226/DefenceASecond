@@ -44,7 +44,7 @@ public class AllySuperClass : CharacterSuperClass
     /// <summary>
     /// 強化需要的素材
     /// </summary>
-    [Header("強化素材的名稱跟數量")]
+    [Header("Upgrade materials name and amount")]
     public string[] upgradeMaterialsName;
     public int[] upgradeMaterialsAmount;
     public float[] upgradeValue;
