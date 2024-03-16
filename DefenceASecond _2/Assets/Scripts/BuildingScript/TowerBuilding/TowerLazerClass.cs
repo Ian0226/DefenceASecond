@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on lazer gameObject,is the child object of DefenceTower.
+/// </summary>
 public class TowerLazerClass : MonoBehaviour
 {
     [SerializeField]
@@ -22,6 +25,9 @@ public class TowerLazerClass : MonoBehaviour
         set { damage = value; }
     }
 
+    /// <summary>
+    /// Set the lazer face to enemy.
+    /// </summary>
     private void LookAtEnemy()
     {
         if(target != null)

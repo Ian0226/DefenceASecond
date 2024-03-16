@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// All character either ally or enemy inheritance this script.
+/// </summary>
 public abstract class CharacterSuperClass : MonoBehaviour
 {
     

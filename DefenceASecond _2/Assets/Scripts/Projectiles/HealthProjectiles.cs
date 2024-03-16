@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on healthy projectiles,inheritance ProjectilesSuperClass.
+/// </summary>
 public class HealthProjectiles : ProjectilesSuperClass
 {
     private List<GameObject> healthAllies = new List<GameObject>();

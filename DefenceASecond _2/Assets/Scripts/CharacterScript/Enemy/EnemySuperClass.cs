@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Parent class of enemies,inheritance CharacterSuperClass.
+/// </summary>
 public class EnemySuperClass : CharacterSuperClass
 {
     [SerializeField]
@@ -49,6 +52,9 @@ public class EnemySuperClass : CharacterSuperClass
         AttackBtwAttackSp = AttackSpeed;
     }
     
+    /// <summary>
+    /// Handle moving.
+    /// </summary>
     public override void Move()
     {
         if (moveTarget.Count != 0)
@@ -59,10 +65,7 @@ public class EnemySuperClass : CharacterSuperClass
         }
         anim.SetFloat("moveSpeed", MoveSpeed);
     }
-    public override void Attack()
-    {
-
-    }
+    public override void Attack(){}
     public override void Die()
     {
         PlayerHome playerHome = GameObject.Find("PlayerCastle").GetComponent<PlayerHome>();
@@ -71,6 +74,11 @@ public class EnemySuperClass : CharacterSuperClass
         Destroy(this.gameObject);
 
     }
+
+    /// <summary>
+    /// Enemy can attack player building,but this game mechanics not complete yet.
+    /// </summary>
+    /// <param name="tower">Attack target tower.</param>
     protected void AttackDefenceTower(GameObject tower)
     {
         //transform.position = Vector3.MoveTowards(transform.position, tower.transform.GetChild(0).transform.position, MoveSpeed * Time.deltaTime);

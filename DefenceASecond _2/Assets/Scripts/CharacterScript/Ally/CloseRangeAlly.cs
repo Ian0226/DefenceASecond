@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on close range ally,inheritance AllySuperClass.
+/// </summary>
 public class CloseRangeAlly : AllySuperClass
 {
     private void Update()

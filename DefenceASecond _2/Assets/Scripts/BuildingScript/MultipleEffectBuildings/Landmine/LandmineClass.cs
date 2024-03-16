@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Landmine class on landmine gameObject,inheritance BuildingSuperClass.
+/// </summary>
 public class LandmineClass : BuildingSuperClass
 {
     private List<GameObject> nowCollisiontObj = new List<GameObject>();

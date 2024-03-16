@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on sup type character.
+/// </summary>
 public class SupportClass : FarRangeAlly
 {
     public override void Attack()

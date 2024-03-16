@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Parent class of projectiles.
+/// </summary>
 public class ProjectilesSuperClass : MonoBehaviour
 {
     [SerializeField]

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Component on all items,give item some properties.
+/// </summary>
 public class ItemClass : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
     public GameObject background;
@@ -39,7 +42,6 @@ public class ItemClass : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
         background = transform.parent.gameObject;
         if (background.GetComponent<RectTransform>().rect.width != 216 && background.GetComponent<RectTransform>().rect.height != 259)
         {
-            //Debug.Log("!");
             this.GetComponent<RectTransform>().sizeDelta = new Vector2(this.GetComponent<RectTransform>().rect.width * 0.64f, this.GetComponent<RectTransform>().rect.height * 0.64f);
             this.GetComponent<RectTransform>().localPosition = new Vector2(69, -66);
         }
@@ -49,6 +51,10 @@ public class ItemClass : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
         itemInfoPanelRectTransform.sizeDelta = new Vector2(itemInfoPanelRectTransform.rect.width, itemDescriptionText.rectTransform.rect.height + 105);
         itemAmount.text = itemAmountValue.ToString();
     }
+
+    /// <summary>
+    /// Display item information when cursor on it.
+    /// </summary>
     private void ShowItemInfo()
     {
         itemInfoPanel.gameObject.SetActive(true);

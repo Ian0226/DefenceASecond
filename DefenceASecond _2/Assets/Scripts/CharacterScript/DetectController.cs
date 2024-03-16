@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Use to detect character in detect range,is component in DetectObj.
+/// </summary>
 public class DetectController : MonoBehaviour
 {
     private List<GameObject> collisionObj = new List<GameObject>();
@@ -9,12 +12,16 @@ public class DetectController : MonoBehaviour
     {
         get { return collisionObj; }
     }
+    /// <summary>
+    /// Change type to this object's parent character type.
+    /// </summary>
     [SerializeField] private string type;
 
     public GameObject GetCollisionObj()
     {
         return collisionObj[0];
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(type == "Ally")

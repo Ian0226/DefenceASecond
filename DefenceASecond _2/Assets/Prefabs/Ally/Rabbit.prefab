@@ -179,11 +179,6 @@ MonoBehaviour:
   characterBigHead: {fileID: -2590810971119143164, guid: f60bce8bed61a4e40be889c15914989e, type: 3}
   cost: 5
   moveTarget: []
-<<<<<<< HEAD
-  upgradeMaterialsName: []
-  upgradeMaterialsAmount: 
-=======
->>>>>>> 9b2780f3f8a5da4876a768253e07fa4ac1d402b8
   projectiles: {fileID: 7316332179690633593, guid: 7b1c3fbce36ed8c43820fbd388795321, type: 3}
 --- !u!1 &4449070435109541568
 GameObject:

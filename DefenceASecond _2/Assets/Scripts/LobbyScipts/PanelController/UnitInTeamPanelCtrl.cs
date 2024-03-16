@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Component on AllyPanel and BuildingPanel,is use to handle these two panel's operation.
+/// </summary>
 public class UnitInTeamPanelCtrl : MonoBehaviour
 {
     public GameObject[] playerSelectUnitBtn;
     public GameObject[] playerSelectUnitType;
     public GameObject[] playerSelectUnitCost;
-
-    
 
     public GameObject unitBlock;
     [SerializeField]
@@ -32,6 +33,10 @@ public class UnitInTeamPanelCtrl : MonoBehaviour
     {
         DisplayUnitOnSelectBtn();
     }
+
+    /// <summary>
+    /// Show can use unit on this panel.
+    /// </summary>
     private void DisplayUnit()
     {
         unitBlockList.Clear();
@@ -43,6 +48,10 @@ public class UnitInTeamPanelCtrl : MonoBehaviour
         }
         
     }
+
+    /// <summary>
+    /// Set the unit into can use units list from storage.
+    /// </summary>
     private void GetUnitFromStorage()
     {
         if (this.gameObject.name == "AllyPanel")
@@ -57,6 +66,10 @@ public class UnitInTeamPanelCtrl : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set current selected unit into player selected unit list.
+    /// </summary>
+    /// <param name="i"></param>
     public void SetUnitIntoplayerSelect(int i)
     {
         
@@ -79,6 +92,10 @@ public class UnitInTeamPanelCtrl : MonoBehaviour
         
         
     }
+
+    /// <summary>
+    /// Display now selected unit on playerSelectUnitBtn.
+    /// </summary>
     private void DisplayUnitOnSelectBtn()
     {
         if(this.gameObject.name == "AllyPanel")
@@ -134,6 +151,11 @@ public class UnitInTeamPanelCtrl : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Use on UnitTypeSelectBtn1 button,is use to display unit type that you choose. 
+    /// </summary>
+    /// <param name="unitType"></param>
     public void ChangeAllyType(string unitType)
     {
         allUnitList.Clear();
@@ -147,6 +169,11 @@ public class UnitInTeamPanelCtrl : MonoBehaviour
         }
         DisplayUnit();
     }
+
+    /// <summary>
+    /// If player reclick change unit type button,display all unit.
+    /// </summary>
+    /// <param name="nowClickBtn"></param>
     public void ReDisplayAllAllies(GameObject nowClickBtn)
     {
         if(nowClickTypeBtn != nowClickBtn)
@@ -162,6 +189,10 @@ public class UnitInTeamPanelCtrl : MonoBehaviour
             DisplayUnit();
         }
     }
+
+    /// <summary>
+    /// Clean the unit on showUnitPanel.
+    /// </summary>
     private void CleanUnitBlock()
     {
         for(int i=0; i<showUnitPanel.transform.childCount; i++)

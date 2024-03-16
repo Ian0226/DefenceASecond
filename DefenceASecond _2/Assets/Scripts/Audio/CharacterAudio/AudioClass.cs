@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Use on character gameObject,control audios.
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class AudioClass : MonoBehaviour
 {

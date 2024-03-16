@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on close range enemy,inheritance EnemySuperClass.
+/// </summary>
 public class CloseRangeEnemy : EnemySuperClass
 {
     private void Update()
@@ -14,6 +17,7 @@ public class CloseRangeEnemy : EnemySuperClass
         {
             Die();
         }
+        //Continue moving when not on trap and has no attck target.
         if (detectList.GetComponent<DetectController>().CollisionObj.Count == 0 && IsOnTrap == false)
         {
             IsOnAttack = false;

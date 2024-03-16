@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on big range projectiles,inheritance ProjectilesSuperClass.
+/// </summary>
 public class BigRangeProjectiles : ProjectilesSuperClass
 {
     private List<GameObject> attackEnemies = new List<GameObject>();

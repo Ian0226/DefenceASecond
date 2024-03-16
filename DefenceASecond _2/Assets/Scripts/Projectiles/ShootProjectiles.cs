@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on shooter projectiles,inheritance ProjectilesSuperClass.
+/// </summary>
 public class ShootProjectiles : ProjectilesSuperClass
 {
     [SerializeField]
@@ -54,6 +57,10 @@ public class ShootProjectiles : ProjectilesSuperClass
             Destroy(gameObject, 0.5f);
         }
     }
+
+    /// <summary>
+    /// Handle projectiles moving.
+    /// </summary>
     private void Move()
     {
         

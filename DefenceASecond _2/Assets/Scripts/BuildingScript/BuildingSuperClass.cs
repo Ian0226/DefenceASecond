@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// The parent class of building.
+/// </summary>
 public abstract class BuildingSuperClass : MonoBehaviour
 {
     [SerializeField]

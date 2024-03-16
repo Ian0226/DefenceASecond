@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on HarryPotter(一種魔法師角色類型) type character.
+/// </summary>
 public class HarryPotterClass : FarRangeAlly
 {
     private float standardPos;
@@ -43,10 +46,18 @@ public class HarryPotterClass : FarRangeAlly
         }
         SetHealth();
     }
+
+    /// <summary>
+    /// Use on animation event.
+    /// </summary>
     public void SetPositionUp()
     {
         this.gameObject.transform.position = new Vector2(transform.position.x, transform.position.y + 1.099f);
     }
+
+    /// <summary>
+    /// Use on animation event.
+    /// </summary>
     public void SetPositionDown()
     {
         this.gameObject.transform.position = new Vector2(transform.position.x, transform.position.y - 1.099f);

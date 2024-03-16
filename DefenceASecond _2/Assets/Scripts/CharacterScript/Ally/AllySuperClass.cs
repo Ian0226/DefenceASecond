@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Parent class of ally,inheritance CharacterSuperClass.
+/// </summary>
 public class AllySuperClass : CharacterSuperClass
 {
     [SerializeField]
@@ -48,8 +51,6 @@ public class AllySuperClass : CharacterSuperClass
     public string[] upgradeMaterialsName;
     public int[] upgradeMaterialsAmount;
     public float[] upgradeValue;
-    
-    //public int 
 
     private void Start()
     {
@@ -69,6 +70,10 @@ public class AllySuperClass : CharacterSuperClass
             Health = MaxHealth;
         }
     }
+
+    /// <summary>
+    /// Handle moving.
+    /// </summary>
     public override void Move()
     {
         if(moveTarget.Count != 0)
@@ -79,10 +84,7 @@ public class AllySuperClass : CharacterSuperClass
         }
         anim.SetFloat("moveSpeed", MoveSpeed);
     }
-    public override void Attack()
-    {
-        
-    }
+    public override void Attack(){}
     public override void Die()
     {
         Instantiate(deathEffect, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);

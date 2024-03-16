@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// 
+/// </summary>
 public class UnitBlockController : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]

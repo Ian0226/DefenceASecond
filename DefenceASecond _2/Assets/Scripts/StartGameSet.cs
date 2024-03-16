@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Use on Start Scene,Set screen resolution.
+/// </summary>
 public class StartGameSet : MonoBehaviour
 {
     private void Awake()

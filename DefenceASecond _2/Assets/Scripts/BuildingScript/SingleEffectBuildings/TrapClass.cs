@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Trap class on trap gameObject,inheritance BuildingSuperClass.
+/// </summary>
 public class TrapClass : BuildingSuperClass
 {
     [SerializeField]

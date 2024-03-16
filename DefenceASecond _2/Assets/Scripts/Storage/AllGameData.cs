@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handle game data operations.
+/// </summary>
 public class AllGameData : MonoBehaviour
 {
     private static int playerMoney = 100;
@@ -36,10 +39,7 @@ public class AllGameData : MonoBehaviour
             allBuildings.AddRange(allBuildingsIns);
         }
     }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+
     public static List<GameObject> getAllAllies()
     {
         return allAllies;
@@ -52,10 +52,7 @@ public class AllGameData : MonoBehaviour
     {
         return playerItems;
     }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+
     public static GameObject[] getPlayerSelectAlly()
     {
         return playerSelectAlly;
@@ -68,10 +65,7 @@ public class AllGameData : MonoBehaviour
     {
         playerSelectAlly[index] = obj;
     }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
+
     public static GameObject[] getPlayerSelectBuilding()
     {
         return playerSelectBuilding;
@@ -84,11 +78,7 @@ public class AllGameData : MonoBehaviour
     {
         playerSelectBuilding[index] = obj;
     }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="i"></param>
-    /// <returns></returns>
+
     public static GameObject getPlayerItemByIndex(int i)
     {
         return playerItems[i];
@@ -105,7 +95,12 @@ public class AllGameData : MonoBehaviour
         }
         return item;
     }
-    public void SaveData()//將AllGameData內資料放進PlayerData中，並將PlayerData資料存成Json檔
+
+    //遊戲機制中有強化系統，當玩家強化角色後，角色將永久獲得強化效果，因此必須角色數值儲存起來。
+    /// <summary>
+    /// 將AllGameData內資料放進PlayerData class中，並將PlayerData資料存成Json檔。
+    /// </summary>
+    public void SaveData()
     {
         ClearData();
         data.pyMoney = playerMoney;
@@ -117,7 +112,11 @@ public class AllGameData : MonoBehaviour
         }
         PlayerPrefs.SetString("jsonData", JsonUtility.ToJson(data));
     }
-    public void LoadData()//將Json檔轉回PlayerData物件，再將PlayerData資料存入AllGameData
+
+    /// <summary>
+    /// 將Json檔轉回PlayerData物件，再將PlayerData資料存入AllGameData。
+    /// </summary>
+    public void LoadData()
     {
         data = JsonUtility.FromJson<PlayerData>(PlayerPrefs.GetString("jsonData"));
         playerMoney = data.pyMoney;
@@ -155,6 +154,7 @@ public class AllGameData : MonoBehaviour
         data.chaHealth.Clear();
         data.chaMoveSpeed.Clear();
     }
+
     [System.Serializable]
     public class PlayerData
     {

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on MoneyGenerator,inheritance BuildingSuperClass.
+/// </summary>
 public class MoneyGeneratorClass : BuildingSuperClass
 {
     [SerializeField]
@@ -38,6 +41,7 @@ public class MoneyGeneratorClass : BuildingSuperClass
     }
     protected override void UseFunction()
     {
+        //每隔一段時間生成金幣，生成量為生成最大值與最小值間隨機取一個值。
         if(Time.timeSinceLevelLoad >= generateCD)
         {
             PH.PlayerMoney += Random.Range(increaseMoneyMin, increaseMoneyMax + 1);

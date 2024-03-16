@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handle package system,is a component on PackagePanel UI gameObject.
+/// </summary>
 public class PackageManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject itemGroupPanel;
 
-
+    /// <summary>
+    /// When package panel open,display item on it.
+    /// </summary>
     private void OnEnable()
     {
         ClearAllObj();
@@ -18,6 +23,10 @@ public class PackageManager : MonoBehaviour
             itemObj.transform.SetParent(itemGroupPanel.transform);
         }
     }
+
+    /// <summary>
+    /// Clear all object on panel first when panel open.
+    /// </summary>
     private void ClearAllObj()
     {
         for (int i = 0; i < itemGroupPanel.transform.childCount; i++)

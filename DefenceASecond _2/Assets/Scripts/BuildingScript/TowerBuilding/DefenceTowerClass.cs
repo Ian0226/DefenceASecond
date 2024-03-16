@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on Defence tower,inheritance BuildingSuperClass. 
+/// </summary>
 public class DefenceTowerClass : BuildingSuperClass
 {
     [SerializeField]
@@ -24,10 +27,12 @@ public class DefenceTowerClass : BuildingSuperClass
     }
     private void Update()
     {
-        if(Health <= 0)
+        //Enemy can attack tower,but not done this game mechanics yet.
+        if (Health <= 0)
         {
             Destroy(gameObject);
         }
+
         if(collisionEnemy.Count > 0)
         {
             lazer.Target = collisionEnemy[0];
@@ -49,12 +54,15 @@ public class DefenceTowerClass : BuildingSuperClass
     {
         if(lazer.Target != null)
         {
+            //Attack the first enemy in list.
             collisionEnemy[0].GetComponent<EnemySuperClass>().Health -= Damage;
         }
         
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Add enemy object to collisionEnemy list.
         if(collision.gameObject.CompareTag("Enemy"))
         {
             collisionEnemy.Add(collision.gameObject);
@@ -62,20 +70,27 @@ public class DefenceTowerClass : BuildingSuperClass
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        //Remove enemy object from collisionEnemy list if enemy move out tower attack range.
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collisionEnemy.Remove(collision.gameObject);
         }
     }
 
+    /// <summary>
+    /// Create lazer animation,use on animation event.
+    /// </summary>
     private void ShowLazer()
     {
         lazerObj.SetActive(true);
         Invoke("UseFunction", 0.3f);
     }
+
+    /// <summary>
+    /// Close laser animation,use on animation event.
+    /// </summary>
     private void CloseLazer()
     {
         lazerObj.SetActive(false);
     }
-    
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Component on level manger gameObject,use to handle game flow.
+/// </summary>
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
@@ -20,7 +23,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject enemyInsPos;
 
-    //全部該關卡要生成的怪物
+    //全部該關卡要生成的敵人
     [SerializeField]
     private GameObject[] createdEnemy;
 
@@ -135,11 +138,13 @@ public class LevelManager : MonoBehaviour
         }
         if (playerHome.CastleHealth <= 0)
         {
-            //輸惹
+            //Handle lose.
             playerLose = true;
             losePanel.SetActive(true);
             Time.timeScale = 0;
-        }/*
+        }
+        
+        /*
         if(playerHome.CastleHealth >= 0 && nowWave == 5 && insEnemy.Count == 0)
         {
             waveText.text = "";
@@ -149,14 +154,17 @@ public class LevelManager : MonoBehaviour
             AllGameData.getPlayerItems().AddRange(levelReward);
             //Debug.Log(AllGameData.getPlayerItemByIndex(0));
             Time.timeScale = 0;
-        }*/
-        //測試用
+        }
+        */
+
+        //測試用的Input
         if(Input.GetKeyDown(KeyCode.O))
         {
             playerLose = true;
             losePanel.SetActive(true);
             Time.timeScale = 0;
         }
+
         if(Input.GetKeyDown(KeyCode.W))
         {
             playerLose = false;
@@ -171,7 +179,10 @@ public class LevelManager : MonoBehaviour
         }
         
     }
-    //把關卡獎勵存入AllGameData
+
+    /// <summary>
+    /// 把關卡獎勵存入AllGameData。
+    /// </summary>
     private void AddLevelRewardToGameData()
     {
         if(AllGameData.getPlayerItems().Count > 0)
@@ -203,6 +214,10 @@ public class LevelManager : MonoBehaviour
         }
         
     }
+
+    /// <summary>
+    /// 每一波的準備時間計時器。
+    /// </summary>
     private void WavePrepareTimeCounter()
     {
         wavePrepareTime -= 1*Time.deltaTime;
@@ -213,10 +228,18 @@ public class LevelManager : MonoBehaviour
             ClosePrepareText();
         }
     }
+
+    /// <summary>
+    /// 當準備時間結束呼叫該方法。
+    /// </summary>
     private void ClosePrepareText()
     {
         prepareStatusText.gameObject.SetActive(false);
     }
+
+    /// <summary>
+    /// 處理波數系統。
+    /// </summary>
     private void WaveControl()
     {
         waveText.text = "第 "+nowWave.ToString()+" 波";
@@ -231,10 +254,18 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Change nowWave value.
+    /// </summary>
     private void ChangeWave()
     {
         nowWave++;
     }
+
+    /// <summary>
+    /// 根據波數決定當前會生成的敵人。
+    /// </summary>
     private void CreateEnemyControl()
     {
         switch(nowWave)
@@ -270,6 +301,11 @@ public class LevelManager : MonoBehaviour
                 break;
         }
     }
+
+    /// <summary>
+    /// Instantiate enemy by index.
+    /// </summary>
+    /// <param name="i">Enemy type index.</param>
     private void CreateEnemy(int i)
     {
         if (Time.timeSinceLevelLoad > createEnemyTime[i])
@@ -286,16 +322,28 @@ public class LevelManager : MonoBehaviour
             createEnemyTime[i] = Time.timeSinceLevelLoad + storeCreateEnemyTime[i];
         }
     }
+
+    /// <summary>
+    /// Instantiate boss.
+    /// </summary>
     private void CreateBoss()
     {
         Instantiate(createdEnemy[4], enemyInsPos.transform.position, Quaternion.identity);
     }
+
+    /// <summary>
+    /// Handle exit this level.
+    /// </summary>
     public void BackToLobby()
     {
         Time.timeScale = 1;
         nowWave = 1;
         Application.LoadLevel("LobbyScene");
     }
+
+    /// <summary>
+    /// Display win game item on RewardItemPanel UI gameObject.
+    /// </summary>
     private void DisplayWinGameReward()
     {
         for(int i = 0;i<levelReward.Length;i++)

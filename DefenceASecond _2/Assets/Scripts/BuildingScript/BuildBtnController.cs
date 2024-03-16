@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Component on ShowBuildPanelBtn,click this button to show building list.
+/// </summary>
 public class BuildBtnController : MonoBehaviour
 {
     [SerializeField]
@@ -20,12 +23,20 @@ public class BuildBtnController : MonoBehaviour
     {
         DisplayBuilding();
     }
+
+    /// <summary>
+    /// Set on button event.
+    /// </summary>
     public void OpenBuildPanel()
     {
         buildManager.CloseNowClickPanel();
         buildManager.NowClickBuildPanel = this.gameObject.transform.GetChild(0).gameObject;
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
+
+    /// <summary>
+    /// Called when this panel active.
+    /// </summary>
     private void DisplayBuilding()
     {
         for(int i=0; i<buildingImg.Length;i++)
@@ -48,6 +59,11 @@ public class BuildBtnController : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Build player select building.
+    /// </summary>
+    /// <param name="i"></param>
     public void Build(int i)
     {
         if(AllGameData.findPlayerSelectBuildingByIndex(i)!=null && nowBuild == null && playerHome.PlayerMoney >= AllGameData.findPlayerSelectBuildingByIndex(i).GetComponent<BuildingSuperClass>().Cost)

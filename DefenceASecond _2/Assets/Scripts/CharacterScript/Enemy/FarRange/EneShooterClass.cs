@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Component on enemy shooter type character.
+/// </summary>
 public class EneShooterClass : FarRangeEnemy
 {
     [SerializeField]

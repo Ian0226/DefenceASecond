@@ -334,17 +334,6 @@ MonoBehaviour:
   characterBigHead: {fileID: 6375404495001891194, guid: f60bce8bed61a4e40be889c15914989e, type: 3}
   cost: 2
   moveTarget: []
-<<<<<<< HEAD
-  upgradeMaterialsName:
-  - BossTeeth
-  - PIAOHANSoul
-  - YuYuMao
-  upgradeMaterialsAmount: 010000000100000001000000
-  upgradeValue:
-  - 3
-  - 5
-  - 0.5
-=======
 --- !u!114 &7767996674987969774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,4 +444,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> 9b2780f3f8a5da4876a768253e07fa4ac1d402b8
